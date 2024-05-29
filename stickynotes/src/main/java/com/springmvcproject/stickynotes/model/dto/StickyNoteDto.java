@@ -21,6 +21,6 @@ public class StickyNoteDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private StickyNoteStatus status;
-    private  String color;
+    private String color;
 
 }
