@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="stickynotes:war">
+    <output-path>$PROJECT_DIR$/stickynotes/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>stickynotes</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="stickynotes-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="stickynotes:war exploded" />
+    </root>
+  </artifact>
+</component>
