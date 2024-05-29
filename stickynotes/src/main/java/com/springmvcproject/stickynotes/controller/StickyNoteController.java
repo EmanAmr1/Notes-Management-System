@@ -2,6 +2,7 @@ package com.springmvcproject.stickynotes.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class StickyNoteController {
@@ -12,8 +13,20 @@ public class StickyNoteController {
     }
 
     @GetMapping("my-notes")
-    public String test(){
+    public String myNotes(){
         return "my-notes";
+    }
+
+
+
+    @GetMapping("sticky-note/{id}")
+    public String stickyNote(@PathVariable (name = "id") Integer id){
+        return "sticky-note";
+    }
+
+    @GetMapping("edit-note/{id}")
+    public String editNote(@PathVariable (name = "id") Integer id){
+        return "edit-note";
     }
 
 }
