@@ -32,11 +32,11 @@ private  final StickNoteService stickyNoteService ;
     }
 
 
-    @GetMapping("sticky-note/{id}")
+   /* @GetMapping("sticky-note/{id}")
     public String stickyNote(@PathVariable (name = "id") Integer id){
         return "sticky-note";
     }
-
+*/
     @GetMapping("edit-note/{id}")
     public String editNote(@PathVariable (name = "id") Integer id){
         return "edit-note";
@@ -47,6 +47,14 @@ private  final StickNoteService stickyNoteService ;
     public String addNewStickyNote( @ModelAttribute("dto") AddStickNoteDto dto){
          this.stickyNoteService.addStickyNote(dto);
         return "redirect:/";
+    }
+
+    @GetMapping("sticky-note/{id}")
+    public String getStickyNote(@PathVariable Long id,Model model ){
+      StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
+        model.addAttribute("sticky",stick);
+        return "sticky-note";
+
     }
 
 

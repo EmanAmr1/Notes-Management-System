@@ -15,27 +15,33 @@
     </style>
 </head>
 <body>
-<span layout:fragment="page-name">Sticky Notes/ <span class="sub-title">Sticky Note Name</span>
 
-<span class="edit-btn"><a class="btn btn-success btn-sm" th:href="@{/edit-note/1}"> Edit</a></span>
-</span>
+<div>
+    <span>Sticky Notes/ <span class="sub-title" th:text="${sticky.getName()}">Sticky Note Name</span>
+        <span class="edit-btn"><a class="btn btn-success btn-sm" th:href="@{/edit-note/{id}(id=${sticky.id})}"> Edit</a></span>
+    </span>
+</div>
+
 <div layout:fragment="content">
     <div class="row">
         <div class="col-12">
-            <div class="card" style="background-color: antiquewhite">
-                <div class="card-body">
-                    <h5 class="card-title">Sticky Note Name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Created : 20/12/2023</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                        of the
-                        card's content.</p>
-                    <a  href="#" class="card-link">View Notes</a>
+            <div class="row">
+                <div class="col-12" >
+                    <div class="card" th:style="${'background-color: '+sticky.getColor()}" >
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${sticky.getName()}"></h5>
+                            <h6 class="card-subtitle mb-2 text-muted" >Created: <span th:text="${sticky.getCreatedAt()}" ></span></h6>
+                            <p class="card-text" th:text="${sticky.getDescription()}" ></p>
+
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
     </div>
 </div>
-</div>
+
 </body>
 </html>

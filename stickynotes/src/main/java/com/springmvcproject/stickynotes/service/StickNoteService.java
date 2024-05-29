@@ -11,4 +11,6 @@ public interface StickNoteService {
 
     public AddStickNoteDto addStickyNote(AddStickNoteDto dto);
     List<StickyNoteDto> allStickyNotes();
+
+   StickyNoteDto getStickyNote(Long id);
 }
