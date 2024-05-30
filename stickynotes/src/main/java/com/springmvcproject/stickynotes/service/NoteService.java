@@ -11,5 +11,7 @@ public interface NoteService {
 
     NoteDto add(AddNoteDto dto, Long stickyNoteId);
 
+    void delete(Long id);
+
     List<NoteDto> getALLNotes(Long stickyNoteId);
 }

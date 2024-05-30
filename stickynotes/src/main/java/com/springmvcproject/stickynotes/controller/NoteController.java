@@ -6,10 +6,7 @@ import com.springmvcproject.stickynotes.model.dto.NoteDto;
 import com.springmvcproject.stickynotes.service.NoteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/note")
@@ -26,7 +23,13 @@ public class NoteController {
 
     }
 
+@GetMapping("/delete/{id}/{stickyNoteId}")
+    public String deleteNote(@PathVariable Long id , @PathVariable("stickyNoteId") Long stickyNoteId ) {
 
+        this.noteService.delete(id);
+        return "redirect:/sticky-note/"+stickyNoteId;
+
+}
 
 
 }

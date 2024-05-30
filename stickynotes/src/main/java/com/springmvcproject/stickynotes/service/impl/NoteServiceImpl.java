@@ -27,11 +27,20 @@ private final NoteMapper noteMapper;
           return this.noteMapper.toDto(savedEntity);
     }
 
+
+
     @Override
     public List<NoteDto> getALLNotes(Long stickyNoteId) {
 
      List<Note> notes=  this.noteRepo.findAllByStickyNoteIdOrderByIdDesc(stickyNoteId);
-return this.noteMapper.toDTOs(notes);
+     return this.noteMapper.toDTOs(notes);
+
+    }
+
+    @Override
+    public void delete(Long id) {
+
+        this.noteRepo.deleteById(id);
 
     }
 }

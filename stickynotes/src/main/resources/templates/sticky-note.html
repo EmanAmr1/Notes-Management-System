@@ -74,7 +74,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Add Note</button>
                 </div>
                 </form>
             </div>
@@ -87,7 +87,7 @@
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">Created : <span th:text="${note.getCreatedAt()}"></span></h6>
                 <p class="card-text" th:text="${note.getNote()}" ></p>
-                <button class="btn btn-sm btn-danger">Delete</button>
+                <a class="btn btn-sm btn-danger" th:href="${'/note/delete/' + note.getId() + '/' + sticky.getId()}" >Delete</a>
             </div>
         </div>
     </div>
