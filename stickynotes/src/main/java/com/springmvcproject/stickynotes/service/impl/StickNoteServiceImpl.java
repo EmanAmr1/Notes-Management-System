@@ -31,13 +31,13 @@ public class StickNoteServiceImpl implements StickNoteService {
         return addStickNoteDto;
     }
 
-    @Override
+   /* @Override
     public UpdateStickyNoteDto updateStickyNote(UpdateStickyNoteDto dto) {
         StickyNote entity =this.stickyNoteMapper.toUpdateEntity(dto);
         StickyNote savedEntity = this.stickyNoteRepo.save(entity);
         UpdateStickyNoteDto updateStickyNoteDto = this.stickyNoteMapper.toUpdateDto(savedEntity);
         return updateStickyNoteDto;
-    }
+    }*/
 
     @Override
     public List<StickyNoteDto> allStickyNotes() {

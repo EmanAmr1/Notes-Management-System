@@ -55,7 +55,6 @@ private  final StickNoteService stickyNoteService ;
     public String editNote(@PathVariable (name = "id") Long id,Model model){
         StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
         model.addAttribute("sticky",stick);
-
         return "edit-note";
     }
 

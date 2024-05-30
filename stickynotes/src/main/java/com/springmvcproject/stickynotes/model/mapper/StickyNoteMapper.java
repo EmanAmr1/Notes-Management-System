@@ -11,15 +11,25 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface StickyNoteMapper {
 
-StickyNoteDto toRespDto(StickyNote entity);
-StickyNote toEntity(StickyNoteDto dto);
+    //stickNote
+    StickyNoteDto toRespDto(StickyNote entity);
+    StickyNote toEntity(StickyNoteDto dto);
+
+
+    //stickyNotes
     List<StickyNoteDto> toDtoList(List<StickyNote> entities);
 
     List<StickyNote> toEntityList(List<StickyNoteDto> dtos);
 
-AddStickNoteDto toAddDto(StickyNote entity);
 
-StickyNote toAddEntity(AddStickNoteDto dto);
+    //addStickyNote
+
+    AddStickNoteDto toAddDto(StickyNote entity);
+
+    StickyNote toAddEntity(AddStickNoteDto dto);
+
+
+    //updateStickyNote
 
     UpdateStickyNoteDto toUpdateDto (StickyNote entity);
 

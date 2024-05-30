@@ -10,13 +10,16 @@ import java.util.List;
 @Service
 public interface StickNoteService {
 
-    public AddStickNoteDto addStickyNote(AddStickNoteDto dto);
-
-    public UpdateStickyNoteDto updateStickyNote(UpdateStickyNoteDto dto);
     List<StickyNoteDto> allStickyNotes();
 
    StickyNoteDto getStickyNote(Long id);
 
-   void update(UpdateStickyNoteDto dto, Long id);
+
+    public AddStickNoteDto addStickyNote(AddStickNoteDto dto);
+
+    //public UpdateStickyNoteDto updateStickyNote(UpdateStickyNoteDto dto);
+
+
+    void update(UpdateStickyNoteDto dto, Long id);
 
 }
