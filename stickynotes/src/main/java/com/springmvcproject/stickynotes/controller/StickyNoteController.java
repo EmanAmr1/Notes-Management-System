@@ -2,15 +2,12 @@ package com.springmvcproject.stickynotes.controller;
 
 import com.springmvcproject.stickynotes.model.dto.AddStickNoteDto;
 import com.springmvcproject.stickynotes.model.dto.StickyNoteDto;
-import com.springmvcproject.stickynotes.model.entity.StickyNote;
+import com.springmvcproject.stickynotes.model.dto.UpdateStickyNoteDto;
 import com.springmvcproject.stickynotes.service.StickNoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +25,7 @@ private  final StickNoteService stickyNoteService ;
 
     @GetMapping("my-notes")
     public String myNotes(){
+
         return "my-notes";
     }
 
@@ -37,6 +35,22 @@ private  final StickNoteService stickyNoteService ;
         return "sticky-note";
     }
 */
+
+
+    @GetMapping("sticky-note/{id}")
+    public String getStickyNote(@PathVariable Long id,Model model ){
+        StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
+        model.addAttribute("sticky",stick);
+        return "sticky-note";
+
+    }
+
+    @PostMapping("/save")
+    public String addNewStickyNote( @ModelAttribute("dto") AddStickNoteDto dto){
+         this.stickyNoteService.addStickyNote(dto);
+        return "redirect:/";
+    }
+
     @GetMapping("edit-note/{id}")
     public String editNote(@PathVariable (name = "id") Long id,Model model){
         StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
@@ -45,20 +59,15 @@ private  final StickNoteService stickyNoteService ;
         return "edit-note";
     }
 
-
-    @PostMapping("/save")
-    public String addNewStickyNote( @ModelAttribute("dto") AddStickNoteDto dto){
-         this.stickyNoteService.addStickyNote(dto);
+    @PostMapping("/update/{id}")
+    public String updateStickyNote(@ModelAttribute("dto") UpdateStickyNoteDto dto , @PathVariable("id") Long id){
+        this.stickyNoteService.update(dto,id);
         return "redirect:/";
     }
 
-    @GetMapping("sticky-note/{id}")
-    public String getStickyNote(@PathVariable Long id,Model model ){
-      StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
-        model.addAttribute("sticky",stick);
-        return "sticky-note";
 
-    }
+
+
 
 
 

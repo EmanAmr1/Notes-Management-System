@@ -11,7 +11,7 @@
   <div class="col-8">
     <div class="row">
 
-      <form action="update" method="post">
+      <form   th:action="${'/update/' +sticky.getId()}"  th:object="${sticky}" method="post">
         <div class="col-12">
           <div class="form-group">
             <label for="sticky_note_name" >Sticky Note Name</label>
@@ -36,8 +36,8 @@
           <div class="form-group">
             <label for="sticky_note_status" >Status </label>
             <select name="status" class="form-control" id="sticky_note_status" th:value="${sticky.getStatus()}" >
-              <option  th:selected="${sticky.getStatus() == 'Active'}"  value="Active">Active</option>
-              <option th:selected="${sticky.getStatus() == 'Disabled'}"  value="Disabled">Disabled</option>
+              <option  th:selected="${sticky.getStatus().toString() == 'ACTIVE'}"  value="ACTIVE">Active</option>
+              <option th:selected="${sticky.getStatus().toString() == 'DISABLED'}"  value="DISABLED">Disabled</option>
             </select>
           </div>
 
