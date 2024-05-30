@@ -38,7 +38,10 @@ private  final StickNoteService stickyNoteService ;
     }
 */
     @GetMapping("edit-note/{id}")
-    public String editNote(@PathVariable (name = "id") Integer id){
+    public String editNote(@PathVariable (name = "id") Long id,Model model){
+        StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
+        model.addAttribute("sticky",stick);
+
         return "edit-note";
     }
 

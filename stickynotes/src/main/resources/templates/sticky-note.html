@@ -16,13 +16,16 @@
 </head>
 <body>
 
-<div>
-    <span>Sticky Notes/ <span class="sub-title" th:text="${sticky.getName()}">Sticky Note Name</span>
-        <span class="edit-btn"><a class="btn btn-success btn-sm" th:href="@{/edit-note/{id}(id=${sticky.id})}"> Edit</a></span>
-    </span>
-</div>
+
 
 <div layout:fragment="content">
+
+    <div>
+    <span>Sticky Notes/ <span class="sub-title" th:text="${sticky.getName()}">Sticky Note Name</span>
+        <span class="edit-btn"><a class="btn btn-success btn-sm" th:href="@{'/edit-note/' + ${sticky.getId()}}"> Edit</a></span>
+    </span>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="row">
