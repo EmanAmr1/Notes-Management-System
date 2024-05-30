@@ -1,8 +1,11 @@
 package com.springmvcproject.stickynotes.controller;
 
 import com.springmvcproject.stickynotes.model.dto.AddStickNoteDto;
+import com.springmvcproject.stickynotes.model.dto.NoteDto;
 import com.springmvcproject.stickynotes.model.dto.StickyNoteDto;
 import com.springmvcproject.stickynotes.model.dto.UpdateStickyNoteDto;
+import com.springmvcproject.stickynotes.model.entity.Note;
+import com.springmvcproject.stickynotes.service.NoteService;
 import com.springmvcproject.stickynotes.service.StickNoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StickyNoteController {
 private  final StickNoteService stickyNoteService ;
+private final NoteService noteService;
     @GetMapping("")
     public String home(Model model){
 
@@ -40,7 +44,9 @@ private  final StickNoteService stickyNoteService ;
     @GetMapping("sticky-note/{id}")
     public String getStickyNote(@PathVariable Long id,Model model ){
         StickyNoteDto stick=  this.stickyNoteService.getStickyNote(id);
+        List<NoteDto> allNotes =this.noteService.getALLNotes(id);
         model.addAttribute("sticky",stick);
+        model.addAttribute("notes", allNotes);
         return "sticky-note";
 
     }

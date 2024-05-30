@@ -22,8 +22,11 @@ public class NoteController {
     public String addNote(@ModelAttribute("dto") AddNoteDto dto ,
                           @PathVariable("stickyNoteId") Long stickyNoteId){
         this.noteService.add(dto,stickyNoteId);
-  return "redirect:/sticky-note/"+stickyNoteId;
+        return "redirect:/sticky-note/"+stickyNoteId;
 
     }
+
+
+
 
 }

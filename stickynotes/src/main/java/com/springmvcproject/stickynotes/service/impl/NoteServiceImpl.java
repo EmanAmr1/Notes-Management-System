@@ -9,6 +9,8 @@ import com.springmvcproject.stickynotes.service.NoteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class NoteServiceImpl implements NoteService {
@@ -23,5 +25,13 @@ private final NoteMapper noteMapper;
           entity.setStickyNoteId(stickyNoteId);
           Note savedEntity =this.noteRepo.save(entity);
           return this.noteMapper.toDto(savedEntity);
+    }
+
+    @Override
+    public List<NoteDto> getALLNotes(Long stickyNoteId) {
+
+     List<Note> notes=  this.noteRepo.findAllByStickyNoteIdOrderByIdDesc(stickyNoteId);
+return this.noteMapper.toDTOs(notes);
+
     }
 }
