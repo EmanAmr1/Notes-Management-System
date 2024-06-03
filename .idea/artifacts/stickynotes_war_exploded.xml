@@ -56,7 +56,6 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:6.3.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:6.1.8" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:3.3.0" />
-          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring6:3.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:3.3.0" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:3.3.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.17.1" />
@@ -71,6 +70,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:6.1.8" />
           <element id="library" level="project" name="Maven: org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.13" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring6:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.3.0" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.3.0" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.7.3" />
@@ -86,11 +89,6 @@
           <element id="library" level="project" name="Maven: org.apache.groovy:groovy:4.0.21" />
           <element id="library" level="project" name="Maven: nz.net.ultraq.groovy:groovy-extensions:2.1.0" />
           <element id="library" level="project" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-expression-processor:3.1.1" />
-          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.1.2.RELEASE" />
-          <element id="library" level="project" name="Maven: ognl:ognl:3.3.4" />
-          <element id="library" level="project" name="Maven: org.javassist:javassist:3.29.0-GA" />
-          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.5.5.Final" />
           <element id="library" level="project" name="Maven: org.mapstruct:mapstruct-processor:1.5.5.Final" />
         </element>
