@@ -10,6 +10,22 @@
 <span layout:fragment="page-name"> My Notes </span>
 <div layout:fragment="content">
 
+
+
+
+    <div class="col-8" th:each="note: ${notes}">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Created : <span th:text="${note.getCreatedAt()}"></span></h6>
+                <p class="card-text" th:text="${note.getNote()}" ></p>
+                <a class="btn btn-sm btn-danger" th:href="${'/note/delete/' + note.getId() + '/' + note.getStickyNoteId()}" >Delete</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
     </div>
 
 </body>

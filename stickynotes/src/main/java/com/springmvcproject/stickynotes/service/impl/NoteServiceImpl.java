@@ -37,10 +37,19 @@ private final NoteMapper noteMapper;
 
     }
 
+
+
     @Override
     public void delete(Long id) {
 
         this.noteRepo.deleteById(id);
 
     }
+
+    @Override
+    public List<NoteDto> getNotes() {
+        List<Note> all =this.noteRepo.findAll();
+        return this.noteMapper.toDTOs(all);
+    }
+
 }

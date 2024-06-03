@@ -27,11 +27,11 @@ private final NoteService noteService;
         return "home";
     }
 
-    @GetMapping("my-notes")
+   /* @GetMapping("my-notes")
     public String myNotes(){
 
         return "my-notes";
-    }
+    }*/
 
 
    /* @GetMapping("sticky-note/{id}")

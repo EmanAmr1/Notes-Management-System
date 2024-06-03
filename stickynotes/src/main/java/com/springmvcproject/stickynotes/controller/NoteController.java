@@ -1,12 +1,17 @@
 package com.springmvcproject.stickynotes.controller;
 
 
+import org.springframework.ui.Model;
 import com.springmvcproject.stickynotes.model.dto.AddNoteDto;
 import com.springmvcproject.stickynotes.model.dto.NoteDto;
+import com.springmvcproject.stickynotes.model.dto.StickyNoteDto;
+import com.springmvcproject.stickynotes.model.entity.Note;
 import com.springmvcproject.stickynotes.service.NoteService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/note")
@@ -31,5 +36,13 @@ public class NoteController {
 
 }
 
+
+@GetMapping("/my-notes")
+public String getNotes(Model model) {
+
+    List<NoteDto> NoteList =this.noteService.getNotes();
+    model.addAttribute("notes",NoteList);
+    return "my-notes";
+}
 
 }
